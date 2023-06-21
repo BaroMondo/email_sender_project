@@ -1,0 +1,32 @@
+<!-- email_sender/templates/email_sender/sent_emails.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sent Emails</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sent Emails:</h1>
+    <ul>
+        {% for message in success_messages %}
+        <li class="success">{{ message }}</li>
+        {% endfor %}
+        {% for message in error_messages %}
+        <li class="error">{{ message }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
