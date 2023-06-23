@@ -2,31 +2,141 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Sent Emails</title>
     <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-weight: normal;
+        }
+
         body {
             background-color: black;
         }
+
         .success {
             color: green;
+            font-family: Arial, Helvetica, sans-serif;
         }
+
         .error {
             color: red;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            width: max-content;
+        }
+
+        h2 {
+            color: rgb(37, 21, 164);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            width: max-content;
+            margin-bottom: 50px;
+            margin-left: 20px;
+            height: max-content;
+        }
+
+        .main-detail {
+            width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 17px;
+            overflow: hidden;
+            border: solid rgb(255, 255, 255) 1px;
+            display: flex;
+        }
+
+        .sending-email {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border: solid rgb(37, 21, 164);
+            width: 90vw;
+            height: max-content;
+            overflow: hidden;
+        }
+
+        .message-status {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border: solid green 1px;
+            width: 90vw;
+            overflow: hidden;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .message-count{
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border: solid rgb(160, 0, 75) 1px;
+            width: 90vw;
+            overflow: hidden;
+            margin-bottom: 50px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Sent Emails:</h1>
-    <ul>
-        {% for message in success_messages %}
-        <li class="success">{{ message }}</li>
-        {% endfor %}
-        {% for message in error_messages %}
-        <li class="error">{{ message }}</li>
-        {% endfor %}
-    </ul>
+    <div class="main-detail">
+        <div>
+            <h1>template selected : </h1>
+            <h1>sending email : </h1>
+            <h1>subject : </h1>
+            <h1>date : </h1>
+        </div>
+
+        <div style="margin-left: 50px;">
+            <h1>:</h1>
+            <h1>:</h1>
+            <h1>:</h1>
+            <h1>:</h1>
+        </div>
+
+        <div style="margin-left: 50px;">
+            <h1>{{template_to_show}}</h1>
+            <h1>{{sending_email}}</h1>
+            <h1>{{subject_to_show}}</h1>
+            <h1>{{today}}</h1>
+        </div>
+    </div>
+
+    <div class="sending-email">
+        <h2>Sending
+            Emails........................................................
+        </h2>
+    </div>
+
+
+    <div class="message-status">
+        <ul>
+            {% for message in success_messages %}
+            <li class="success">{{ message }}</li>
+            {% endfor %}
+
+            {% for message in error_messages %}
+            <li class="error">{{ message }}</li>
+            {% endfor %}
+
+
+        </ul>
+    </div>
+
+    <div class="message-count">
+        <li class="success">Total Sucess : {{success_messages_count}}</li>
+        <li class="error">Total Error : {{error_messages_count}}</li>
+    </div>
 </body>
+
 </html>
-
-
