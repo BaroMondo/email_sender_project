@@ -13,8 +13,8 @@ import json
 
 
 
-template = 'order_processing'
-subject = 'Order Processing Update'
+template = 'tracking'
+subject = 'Order Tracking Update'
 
 
 
