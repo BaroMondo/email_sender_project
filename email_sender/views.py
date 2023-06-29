@@ -15,8 +15,8 @@ from datetime import date
 
 
 
-template = 'tracking'
-subject = 'Order Tracking Update'
+template = 'promotion_mens_oversized'
+subject = "🎉 Discover Stylish Comfort: Women's Oversized T-Shirts at BaroMondo + Get 10% Off with Code GET10INSTANT! 🎉"
 
 
 
